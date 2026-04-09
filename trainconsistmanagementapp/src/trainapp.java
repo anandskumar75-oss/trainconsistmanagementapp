@@ -1,31 +1,24 @@
-import java.util.LinkedList;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 // =========================
-// UC4 - Ordered Train Consist (LinkedList)
+// UC5 - Preserve Order + Uniqueness (LinkedHashSet)
 // =========================
-System.out.println("\n--- Maintaining Ordered Train Consist ---");
+System.out.println("\n--- Train Formation using LinkedHashSet ---");
 
-// Create LinkedList
-LinkedList<String> trainOrder = new LinkedList<>();
+// Create LinkedHashSet
+Set<String> trainFormation = new LinkedHashSet<>();
 
 // Add bogies
-trainOrder.add("Engine");
-trainOrder.add("Sleeper");
-trainOrder.add("AC");
-trainOrder.add("Cargo");
-trainOrder.add("Guard");
+trainFormation.add("Engine");
+trainFormation.add("Sleeper");
+trainFormation.add("Cargo");
+trainFormation.add("Guard");
 
-System.out.println("Initial Train Order: " + trainOrder);
+// Add duplicate intentionally
+trainFormation.add("Sleeper"); // duplicate (will be ignored)
 
-// Insert Pantry Car at position 2 (index starts from 0)
-trainOrder.add(2, "Pantry Car");
+// Display formation
+System.out.println("Final Train Formation: " + trainFormation);
 
-System.out.println("After adding Pantry Car: " + trainOrder);
-
-// Remove first and last bogie
-trainOrder.removeFirst();
-trainOrder.removeLast();
-
-System.out.println("Final Train Order: " + trainOrder);
-
-System.out.println("\nUC4 completed successfully.");
+System.out.println("\nUC5 completed successfully.");
