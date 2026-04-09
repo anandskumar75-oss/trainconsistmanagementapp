@@ -16,5 +16,6 @@ public class TrainApp {
 
         // Program continues (placeholder for future UC2–UC7)
         System.out.println("Train system initialized successfully.");
+        System.out.println("UC1 completed successfully");
     }
 }
