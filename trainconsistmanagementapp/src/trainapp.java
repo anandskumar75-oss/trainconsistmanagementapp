@@ -1,52 +1,31 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.LinkedList;
 
-public class TrainApp {
+// =========================
+// UC4 - Ordered Train Consist (LinkedList)
+// =========================
+System.out.println("\n--- Maintaining Ordered Train Consist ---");
 
-    public static void main(String[] args) {
+// Create LinkedList
+LinkedList<String> trainOrder = new LinkedList<>();
 
-        // UC1
-        System.out.println("=== Train Consist Management App ===");
-        List<String> trainConsist = new ArrayList<>();
-        System.out.println("Initial number of bogies: " + trainConsist.size());
+// Add bogies
+trainOrder.add("Engine");
+trainOrder.add("Sleeper");
+trainOrder.add("AC");
+trainOrder.add("Cargo");
+trainOrder.add("Guard");
 
-        // =========================
-        // UC2 - Passenger Bogies
-        // =========================
-        System.out.println("\n--- Adding Passenger Bogies ---");
+System.out.println("Initial Train Order: " + trainOrder);
 
-        List<String> passengerBogies = new ArrayList<>();
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+// Insert Pantry Car at position 2 (index starts from 0)
+trainOrder.add(2, "Pantry Car");
 
-        System.out.println("Passenger Bogies: " + passengerBogies);
+System.out.println("After adding Pantry Car: " + trainOrder);
 
-        passengerBogies.remove("AC Chair");
-        System.out.println("After removal: " + passengerBogies);
+// Remove first and last bogie
+trainOrder.removeFirst();
+trainOrder.removeLast();
 
-        System.out.println("Is Sleeper present? " + passengerBogies.contains("Sleeper"));
+System.out.println("Final Train Order: " + trainOrder);
 
-        // =========================
-        // UC3 - Unique Bogie IDs
-        // =========================
-        System.out.println("\n--- Tracking Unique Bogie IDs ---");
-
-        // Create HashSet
-        Set<String> bogieIds = new HashSet<>();
-
-        // Add IDs (with duplicates intentionally)
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
-        bogieIds.add("BG103");
-        bogieIds.add("BG101"); // duplicate
-        bogieIds.add("BG102"); // duplicate
-
-        // Display final set
-        System.out.println("Unique Bogie IDs: " + bogieIds);
-
-        System.out.println("\nUC3 completed successfully.");
-    }
-}
+System.out.println("\nUC4 completed successfully.");
