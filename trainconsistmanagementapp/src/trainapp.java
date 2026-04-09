@@ -1,44 +1,52 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class TrainApp {
 
     public static void main(String[] args) {
 
-        // UC1 - Initialization
+        // UC1
         System.out.println("=== Train Consist Management App ===");
-
         List<String> trainConsist = new ArrayList<>();
         System.out.println("Initial number of bogies: " + trainConsist.size());
 
         // =========================
         // UC2 - Passenger Bogies
         // =========================
-
         System.out.println("\n--- Adding Passenger Bogies ---");
 
-        // Create passenger bogie list
         List<String> passengerBogies = new ArrayList<>();
-
-        // Add bogies
         passengerBogies.add("Sleeper");
         passengerBogies.add("AC Chair");
         passengerBogies.add("First Class");
 
-        // Display after adding
         System.out.println("Passenger Bogies: " + passengerBogies);
 
-        // Remove one bogie (AC Chair)
-        System.out.println("\nRemoving AC Chair...");
         passengerBogies.remove("AC Chair");
+        System.out.println("After removal: " + passengerBogies);
 
-        // Check if Sleeper exists
-        boolean exists = passengerBogies.contains("Sleeper");
-        System.out.println("Is Sleeper present? " + exists);
+        System.out.println("Is Sleeper present? " + passengerBogies.contains("Sleeper"));
 
-        // Final list
-        System.out.println("\nFinal Passenger Bogies: " + passengerBogies);
+        // =========================
+        // UC3 - Unique Bogie IDs
+        // =========================
+        System.out.println("\n--- Tracking Unique Bogie IDs ---");
 
-        System.out.println("\nUC2 completed successfully.");
+        // Create HashSet
+        Set<String> bogieIds = new HashSet<>();
+
+        // Add IDs (with duplicates intentionally)
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
+
+        // Display final set
+        System.out.println("Unique Bogie IDs: " + bogieIds);
+
+        System.out.println("\nUC3 completed successfully.");
     }
 }
